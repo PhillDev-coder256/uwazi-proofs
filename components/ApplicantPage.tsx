@@ -114,6 +114,7 @@ const ApplicantPage: React.FC<ApplicantPageProps> = ({ addProof }) => {
             <LoadingSpinner className="animate-spin h-12 w-12 text-brand-primary mx-auto" />
             <h2 className="mt-4 text-2xl font-semibold text-gray-700">Analyzing Your Documents...</h2>
             <p className="mt-2 text-gray-500">Using AI to securely extract information. Please wait.</p>
+            
           </div>
         );
 
