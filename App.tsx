@@ -39,7 +39,7 @@ const App: React.FC = () => {
       }
     } catch (error) {
       console.error("Failed to load proofs from localStorage", error);
-      localStorage.removeItem('uwazi-proofs');
+      // localStorage.removeItem('uwazi-proofs');
     }
   }, []);
 

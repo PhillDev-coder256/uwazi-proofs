@@ -1,4 +1,3 @@
-````markdown
 # 🕊️ Uwazi Proofs
 
 **Transparent Eligibility – Private Data**
