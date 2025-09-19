@@ -68,7 +68,11 @@ const DocumentUploader: React.FC<DocumentUploaderProps> = ({ program, onFilesRea
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
-        accept: { 'application/pdf': ['.pdf'], 'image/jpeg': ['.jpg', '.jpeg'], 'image/png': ['.png'] }
+        accept: { 'application/pdf': ['.pdf'], 'image/jpeg': ['.jpg', '.jpeg'], 'image/png': ['.png'] },
+        multiple: undefined,
+        onDragEnter: undefined,
+        onDragOver: undefined,
+        onDragLeave: undefined
     });
     
     const allDocumentsUploaded = useMemo(() =>

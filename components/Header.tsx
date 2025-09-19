@@ -37,7 +37,7 @@ const Header: React.FC<HeaderProps> = ({ currentView, setView }) => {
           </button>
         </nav>
       </div>
-       <div style={{ backgroundColor: '#FEFCE8', borderLeft: '4px solid #FBBF24', color: '#B45309', padding: '16px', margin: '16px 50px', fontFamily: 'Epilogue, sans-serif' }} role="alert">
+       <div style={{ backgroundColor: '#FEFCE8', borderLeft: '4px solid #FBBF24', color: '#B45309', padding: '16px', margin: '16px 50px', fontFamily: 'Epilogue, sans-serif', display: 'none' }} role="alert">
         <p className="font-bold">Demonstration Notice</p>
         <p>This is a DEMO – Gemini API currently processes your documents. In a production system, extraction and proof generation would run fully on the user's device for maximum privacy.</p>
       </div>
