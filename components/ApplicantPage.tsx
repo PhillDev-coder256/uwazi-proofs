@@ -110,7 +110,7 @@ const ApplicantPage: React.FC<ApplicantPageProps> = ({ addProof }) => {
 
       case 'processing':
         return (
-          <div style={{ fontFamily: 'Epilogue, sans-serif !important' }} className="text-center p-10 bg-white rounded-lg shadow-xl">
+          <div style={{ fontFamily: 'Epilogue ' }} className="text-center p-10 bg-white rounded-lg shadow-xl">
             <LoadingSpinner className="animate-spin h-12 w-12 text-brand-primary mx-auto" />
             <h2 className="mt-4 text-2xl font-semibold text-gray-700">Analyzing Your Documents...</h2>
             <p className="mt-2 text-gray-500">Using AI to securely extract information. Please wait.</p>
@@ -120,12 +120,12 @@ const ApplicantPage: React.FC<ApplicantPageProps> = ({ addProof }) => {
 
       case 'results':
         return (
-          <div style={{ fontFamily: 'Epilogue, sans-serif !important' }} className="bg-white p-8 rounded-lg shadow-xl animate-fade-in">
+          <div style={{ fontFamily: 'Epilogue ' }} className="bg-white p-8 rounded-lg shadow-xl animate-fade-in">
             <h2 className="text-3xl font-bold text-center mb-6">Verification Complete</h2>
-            <div style={{ fontFamily: 'Epilogue, sans-serif !important' }} className="grid md:grid-cols-2 gap-8">
+            <div style={{ fontFamily: 'Epilogue ' }} className="grid md:grid-cols-2 gap-8">
               
               {/* Left Column: Extracted Data & Eligibility */}
-              <div style={{ fontFamily: 'Epilogue, sans-serif !important' }}>
+              <div style={{ fontFamily: 'Epilogue ' }}>
                 <h3 className="text-xl font-semibold mb-3 border-b pb-2">Extracted Information</h3>
                 <div className="space-y-2 text-gray-700">
                   {extractedData && Object.entries(extractedData).map(([key, value]) => (

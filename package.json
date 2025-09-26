@@ -1,12 +1,13 @@
 {
-  "name": "uwazi-proofs-–-scholarship-eligibility-demo",
+  "name": "uwazi-proofs-proof-of-concept",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev": "vite --host"
+
   },
   "dependencies": {
     "@google/genai": "^1.20.0",

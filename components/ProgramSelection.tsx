@@ -6,15 +6,16 @@ import { Info, Search } from 'lucide-react';
 interface ProgramSelectionProps {
   programs: Program[];
   onSelect: (program: Program) => void;
+  
 }
 
 const ProgramSelection: React.FC<ProgramSelectionProps> = ({ programs, onSelect }) => {
   const [query, setQuery] = useState('');
-  const [category, setCategory] = useState<'All' | string>('All');
+  const [programCategory, setprogramCategory] = useState<'All' | string>('All');
 
-  // Extract categories dynamically
-  const categories = useMemo(() => {
-    const unique = Array.from(new Set(programs.map((p) => p.category).filter(Boolean)));
+  // Extract programCategories dynamically
+  const programCategories = useMemo(() => {
+    const unique = Array.from(new Set(programs.map((p) => p.ProgramCategory).filter(Boolean)));
     return ['All', ...unique];
   }, [programs]);
 
@@ -26,11 +27,11 @@ const ProgramSelection: React.FC<ProgramSelectionProps> = ({ programs, onSelect 
         (p.description?.toLowerCase().includes(query.toLowerCase()) ?? false) ||
         (p.subtitle?.toLowerCase().includes(query.toLowerCase()) ?? false);
 
-      const matchesCategory = category === 'All' || p.category === category;
+      const matchesprogramCategory = programCategory === 'All' || p.programCategory === programCategory;
 
-      return matchesQuery && matchesCategory;
+      return matchesQuery && matchesprogramCategory;
     });
-  }, [programs, query, category]);
+  }, [programs, query, programCategory]);
 
   return (
     <section
@@ -61,11 +62,11 @@ const ProgramSelection: React.FC<ProgramSelectionProps> = ({ programs, onSelect 
         </div>
 
         <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
+          value={programCategory}
+          onChange={(e) => setprogramCategory(e.target.value)}
           className="px-4 py-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-brand-primary focus:border-brand-primary transition text-gray-700"
         >
-          {categories.map((c) => (
+          {programCategories.map((c) => (
             <option key={c} value={c}>
               {c}
             </option>
@@ -84,17 +85,19 @@ const ProgramSelection: React.FC<ProgramSelectionProps> = ({ programs, onSelect 
               onClick={() => onSelect(program)}
               className="group cursor-pointer rounded-xl border border-gray-200 bg-gray-50 hover:border-brand-primary/70 shadow hover:shadow-xl transition-all flex flex-col"
             >
-              <div className="flex flex-col items-center px-6 pt-8 pb-4 flex-1">
+              <div className="flex flex-col items-left px-6 pt-8 pb-4 flex-1">
                 <program.icon className="h-16 w-16 text-brand-primary mb-4 group-hover:text-indigo-600 transition-colors" />
                 <h3 className="text-xl font-semibold text-brand-dark mb-1">
                   {program.name}
                 </h3>
+                {/* Separator */}
+                <div className="border-t border-gray-200 my-2" />
 
                 {program.subtitle && (
                   <p className="text-sm text-gray-500 mb-2">{program.subtitle}</p>
                 )}
 
-                <p className="text-gray-600 text-center text-sm flex-1">
+                <p className="text-gray-600 text-justify text-sm flex-1">
                   {program.description}
                 </p>
               </div>

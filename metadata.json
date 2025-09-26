@@ -1,5 +1,5 @@
 {
-  "name": "Uwazi Proofs – Scholarship Eligibility Demo",
-  "description": "An application to demonstrate private scholarship eligibility verification. Students upload documents, data is extracted using AI, eligibility is checked, and a mock zero-knowledge proof is generated as a QR code for verification.",
+  "name": "Uwazi Proofs – Proof Of Concept",
+  "description": "An application to demonstrate eligibility verification. Applicants upload documents, data is extracted using AI, eligibility is checked, and a mock zero-knowledge proof is generated as a QR code for verification.",
   "requestFramePermissions": []
 }

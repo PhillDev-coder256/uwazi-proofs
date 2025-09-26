@@ -15,7 +15,24 @@ export type DocumentType =
   | 'NATIONAL_ID'
   | 'INCOME_STATEMENT'
   | 'LEASE_AGREEMENT'
-  | 'UNKNOWN';
+  | 'UNKNOWN' 
+  | 'BACHELOR_DEGREE'
+  | 'ADMISSION_LETTER'
+  | 'FINANCIAL_PLAN'
+  | 'WORK_EXPERIENCE'
+  | 'REFERENCES'
+  | 'OFFER_LETTER'
+  | 'PROOF_OF_ENROLLMENT'
+  | 'MEDICAL_REPORT'
+  | 'PRESCRIPTION'
+  | 'BILLS'
+  | 'PAY_STUB'
+  | 'TAX_RETURN'
+  | 'CERTIFICATION'
+  | 'WORK_EXPERIENCE_PROOF'
+  | 'PASSPORT'
+  ;
+
 
 /**
  * Category of a social-safety-net program (for UI grouping / filtering).
@@ -71,6 +88,7 @@ export interface Program {
   readonly description: string;
   readonly category?: ProgramCategory;
   readonly requiredDocuments: RequiredDocument[];
+
   /**
    * Schema guiding Gemini’s structured data extraction.
    */
@@ -86,6 +104,11 @@ export interface Program {
    * Icon component for visual representation.
    */
   readonly icon: FC<{ className?: string }>;
+  /**
+   * Category of the program (for UI grouping / filtering).
+   */
+  // readonly category?: ProgramCategory;
+
 }
 
 /**
